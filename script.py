@@ -24,15 +24,19 @@ class Approximator:
             y = c * x + d
             s += (y - t) * (y - t)
         return s
-    def _passive_search(self, d_min: float, d_max: float):
-        return 1.0
+    def _passive_search(self, d_min: float, d_max: float, c: float):
     def _dichotomy(self, c_min: float, c_max: float):
         eps = 0.1
         delta = 0.01
         while ((c_max - c_min) > eps):
             c1, c2 = 0.5 * (c_min + c_max) - delta, 0.5 * (c_min + c_max) + delta
-            d1, d2 = self._passive_search(self.d_min, self.d_max), \
-                     self._passive_search(self.c_min, self.c_max)
+            d1, d2 = self._passive_search(self.d_min, self.d_max, c1), \
+                     self._passive_search(self.d_min, self.d_max, c2)
+            if self._sum_of_squares(c2, d2) > self._sum_of_squares(c1, d1):
+                c_max = c2
+            else:
+                c_min = c1
+        return (c_min + c_max) / 2
 
 if __name__ == "__main__":
     approx = Approximator(n = 20, interval = (-2, 1), params = (0.5, 0))
