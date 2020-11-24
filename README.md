@@ -18,4 +18,8 @@
 Исходный код программы приведён в файлах [approximator.py](approximator.py) и [main.py](main.py)
 
 Результат работы программы приведён ниже.
+![Original](screenshots/original_function.png)
 ![Result](screenshots/approximation_result.png)
+```bash
+c = 0.39975781250000003, d = -0.10606060606060627
+```
