@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import random
+from datetime import datetime
 
-random.seed(34)
+random.seed(datetime.now())
 
 class Approximator:
     verbose = True
