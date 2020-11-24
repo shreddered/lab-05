@@ -31,7 +31,9 @@ class Approximator:
         delta = 0.01
         while ((c_max - c_min) > eps):
             c1, c2 = 0.5 * (c_min + c_max) - delta, 0.5 * (c_min + c_max) + delta
-            d1, d2 = self._passive_search(self.d_min, self.d_max)
+            d1, d2 = self._passive_search(self.d_min, self.d_max), \
+                     self._passive_search(self.c_min, self.c_max)
 
-approx = Approximator(n = 20, interval = (-2, 1), params = (0.5, 0))
-approx.search(amp = 1)
+if __name__ == "__main__":
+    approx = Approximator(n = 20, interval = (-2, 1), params = (0.5, 0))
+    approx.search(amp = 1)
