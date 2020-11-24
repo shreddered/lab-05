@@ -70,8 +70,3 @@ class Approximator:
                 c_min = c1
             print("c_max = {}, c_min = {}".format(c_max, c_min))
         return (c_min + c_max) / 2
-
-if __name__ == "__main__":
-    approx = Approximator(n = 20, interval = (-2, 1), params = (0.5, 0))
-    res = approx.search(amp = 1)
-    print("c = {}, d = {}".format(res[0], res[1]))
