@@ -38,7 +38,7 @@ class Approximator:
         for i in range(0, self.n):
             x = self.x[i]
             t = self.y[i]
-            y = self.c * x + self.d
+            y = c * x + d
             s += (y - t) * (y - t)
         return s
     def _passive_search(self, d_min: float, d_max: float, c: float):
