@@ -68,5 +68,4 @@ class Approximator:
                 c_max = c2
             else:
                 c_min = c1
-            print("c_max = {}, c_min = {}".format(c_max, c_min))
         return (c_min + c_max) / 2
